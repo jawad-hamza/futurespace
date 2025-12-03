@@ -1,0 +1,14 @@
+{% extends "home/base.html" %}
+
+{% block title %}FutureSpace Landing{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="fw-bold mb-4">FutureSpace Landing Page</h1>
+
+    <p>Sliders: {{ sliders.count }}</p>
+    <p>Services: {{ services.count }}</p>
+    <p>Courses: {{ courses.count }}</p>
+    <p>Team members: {{ team.count }}</p>
+</div>
+{% endblock %}
