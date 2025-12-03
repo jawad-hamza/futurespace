@@ -1,19 +1,71 @@
 {% extends "home/base.html" %}
+{% block title %}FutureSpace{% endblock %}
 
 {% block content %}
 
-<div class="container py-5">
+<!-- ==== HERO SLIDER WITH PARALLAX ==== -->
+<div class="swiper heroSwiper" data-swiper-parallax="-400">
+    <div class="swiper-wrapper">
 
-    <div class="section-box">
-        <h1 class="section-title">FutureSpace Landing Page</h1>
-        <p>Sliders: {{ sliders.count }}</p>
-        <p>Services: {{ services.count }}</p>
-        <p>Courses: {{ courses.count }}</p>
-        <p>Team members: {{ team.count }}</p>
+        {% for slide in sliders %}
+        <div class="swiper-slide">
 
-        <button class="btn-future">Join Now</button>
+            <div class="hero-slide">
+
+                <!-- Background layer for parallax -->
+                <div class="hero-slide-bg"
+                    data-swiper-parallax="40%"
+                    style="background-image: url('{{ slide.image.url }}');">
+                </div>
+
+                <!-- Text Overlay with slight reverse parallax -->
+                <div class="hero-overlay" data-swiper-parallax="-100">
+                    {% if slide.title %}
+                        <h1 class="hero-title">{{ slide.title }}</h1>
+                    {% endif %}
+                    {% if slide.subtitle %}
+                        <p class="hero-sub">{{ slide.subtitle }}</p>
+                    {% endif %}
+                    {% if slide.button_text %}
+                        <a href="{{ slide.button_link }}" class="btn-join mt-3">{{ slide.button_text }}</a>
+                    {% endif %}
+                </div>
+
+            </div>
+
+        </div>
+        {% endfor %}
+
     </div>
 
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
 </div>
 
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const swiper = new Swiper(".heroSwiper", {
+        loop: true,
+        speed: 1200,
+
+        parallax: true,
+
+        autoplay: { delay: 3000 },
+
+        effect: "slide",   // IMPORTANT: fade disables parallax
+
+        pagination: { 
+            el: ".swiper-pagination", 
+            clickable: true 
+        },
+
+        navigation: { 
+            nextEl: ".swiper-button-next", 
+            prevEl: ".swiper-button-prev" 
+        },
+    });
+</script>
 {% endblock %}
