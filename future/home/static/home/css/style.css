@@ -412,4 +412,82 @@ body::before {
     }
 }
 
+/* ===== SERVICES SECTION ===== */
+/* SERVICE CARDS */
+.services-section {
+  margin-top: 80px;
+}
 
+.section-title {
+  font-size: 36px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #c084fc, #a855f7);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.service-card {
+  overflow: hidden;
+  border-radius: 16px;
+  position: relative;
+}
+
+.service-bg {
+
+ transform: scale(1.1); 
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* aspect ratio 16:9 — adjust if you like */
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.1);
+  transition: transform 0.5s ease;
+  
+}
+
+.service-card:hover .service-bg {
+  transform: scale(1.0);
+}
+
+/* OVERLAY: title always visible */
+.service-title-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  text-align: center;
+}
+
+.service-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #c084fc; /* or use gradient if you like */
+}
+
+/* Description overlay — hidden by default */
+.service-desc-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: rgba(0,0,0,0.6);
+  color: #e5e5e5;
+
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+
+/* On hover show description */
+.service-card:hover .service-desc-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -4,7 +4,7 @@
 {% block content %}
 
 <!-- ==== HERO SLIDER WITH PARALLAX ==== -->
-<div class="swiper heroSwiper" data-swiper-parallax="-400">
+<div class="swiper heroSwiper">
     <div class="swiper-wrapper">
 
         {% for slide in sliders %}
@@ -12,13 +12,13 @@
 
             <div class="hero-slide">
 
-                <!-- Background layer for parallax -->
+                <!-- Background layer -->
                 <div class="hero-slide-bg"
                     data-swiper-parallax="40%"
                     style="background-image: url('{{ slide.image.url }}');">
                 </div>
 
-                <!-- Text Overlay with slight reverse parallax -->
+                <!-- Text Overlay -->
                 <div class="hero-overlay" data-swiper-parallax="-100">
                     {% if slide.title %}
                         <h1 class="hero-title">{{ slide.title }}</h1>
@@ -38,34 +38,76 @@
 
     </div>
 
+    <!-- Slider Arrows & Pagination -->
     <div class="swiper-pagination"></div>
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
+
 </div>
+<!-- END HERO SLIDER -->
+
+
+
+<!-- ==== SERVICES SECTION (AFTER SLIDER) ==== -->
+<!-- ================= OUR SERVICES SECTION ================= -->
+<!-- ===== SERVICES SECTION ===== -->
+<section id="services" class="services-section container py-5">
+
+  <h2 class="text-center mb-5 section-title">Our Services</h2>
+
+  <div class="row g-4 justify-content-center">
+
+    {% for service in services %}
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="service-card">
+
+        <!-- Background image + overlay container -->
+        <div class="service-bg" style="background-image: url('{{ service.image.url }}');">
+
+          <!-- Always visible title overlay -->
+          <div class="service-title-overlay">
+            <h3 class="service-title">{{ service.title }}</h3>
+          </div>
+
+          <!-- Hidden description, appears on hover -->
+          <div class="service-desc-overlay">
+            <p class="service-desc">{{ service.description }}</p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+
+</section>
+
+
+<!-- ================= END OUR SERVICES SECTION ================= -->
 
 {% endblock %}
 
 {% block scripts %}
 <script>
-    const swiper = new Swiper(".heroSwiper", {
-        loop: true,
-        speed: 1200,
+const swiper = new Swiper(".heroSwiper", {
+    loop: true,
+    speed: 1200,
+    parallax: true,
+    autoplay: { delay: 3000 },
 
-        parallax: true,
+    effect: "slide",
 
-        autoplay: { delay: 3000 },
+    pagination: { 
+        el: ".swiper-pagination",
+        clickable: true 
+    },
 
-        effect: "slide",   // IMPORTANT: fade disables parallax
-
-        pagination: { 
-            el: ".swiper-pagination", 
-            clickable: true 
-        },
-
-        navigation: { 
-            nextEl: ".swiper-button-next", 
-            prevEl: ".swiper-button-prev" 
-        },
-    });
+    navigation: { 
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+    },
+});
 </script>
 {% endblock %}
