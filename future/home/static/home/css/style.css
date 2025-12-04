@@ -491,3 +491,33 @@ body::before {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Services-section heading style */
+.service-heading {
+  text-align: center;
+  margin: 30px 0 20px 0;   /* space above and below heading */
+}
+
+.service-heading h2 {
+  font-size: 2.75rem;      /* big but not too huge */
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 0;
+  /* gradient text + glow effect to match theme */
+  background: linear-gradient(90deg, #c084fc, #a855f7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow:
+    0 0 8px rgba(192, 132, 252, 0.6),
+    0 0 16px rgba(168, 85, 247, 0.4);
+}
+
+/* Small subtitle under heading — optional */
+.service-heading .subtitle {
+  font-size: 1rem;
+  color: #d1d5db;
+  margin-top: 8px;
+  opacity: 0.9;
+}
