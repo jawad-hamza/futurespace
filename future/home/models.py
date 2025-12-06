@@ -74,3 +74,26 @@ class ContactMessage(models.Model):
 
 
 # 6️⃣ Activities moved to activity app, not here
+
+class PromoCard(models.Model):
+    TITLE_CHOICES = (
+        ("club", "Club"),
+        ("activity", "Activity"),
+    )
+    key = models.CharField(
+        max_length=20,
+        choices=TITLE_CHOICES,
+        unique=True,
+        help_text="Unique slug: club or activity"
+    )
+    title = models.CharField(max_length=150)
+    description = models.TextField(blank=True)
+    image = models.ImageField(upload_to="promo_cards/")
+    link = models.URLField(blank=True, help_text="Full URL or relative path to page")
+
+    def __str__(self):
+        return f"{self.get_key_display()} card"
+
+    class Meta:
+        verbose_name = "Promo Card"
+        verbose_name_plural = "Promo Cards"

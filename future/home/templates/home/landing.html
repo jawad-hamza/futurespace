@@ -46,10 +46,6 @@
 </div>
 <!-- END HERO SLIDER -->
 
-
-
-<!-- ==== SERVICES SECTION (AFTER SLIDER) ==== -->
-<!-- ================= OUR SERVICES SECTION ================= -->
 <!-- ===== SERVICES SECTION ===== -->
 <section id="services" class="services-section container py-2">
 <div class="service-heading py-3 my-1 service-card" data-aos="fade-up">
@@ -82,11 +78,45 @@
     {% endfor %}
 
   </div>
-
 </section>
-
-
 <!-- ================= END OUR SERVICES SECTION ================= -->
+
+
+{# ===== PROMO / NAVIGATION CARDS SECTION ===== #}
+<section id="promo" class="promo-section container-fluid px-0 py-5">
+  <div class="row g-0">
+
+    {% if club_card %}
+    <div class="col-md-6 promo-card-col" data-aos="fade-right" data-aos-duration="1500">
+      <a href="{{ club_card.link|default:'#' }}" class="d-block">
+        <div class="promo-card promo-left" style="background-image: url('{{ club_card.image.url }}');">
+          <div class="promo-overlay">
+            <h2 class="promo-title" style="color: white;">{{ club_card.title }}</h2>
+            <p class="promo-desc">{{ club_card.description }}</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    {% endif %}
+
+    {% if activity_card %}
+    <div class="col-md-6 promo-card-col " data-aos="fade-left" data-aos-duration="1500">
+      <a href="{{ activity_card.link|default:'#' }}" class="d-block">
+        <div class="promo-card promo-right" style="background-image: url('{{ activity_card.image.url }}');">
+          <div class="promo-overlay">
+            <h2 class="promo-title " style="color: white;">{{ activity_card.title }}</h2>
+            <p class="promo-desc">{{ activity_card.description }}</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    {% endif %}
+
+  </div>
+</section>
+{# ================= END PROMO / NAVIGATION CARDS SECTION ================= #}
+
+
 
 {% endblock %}
 

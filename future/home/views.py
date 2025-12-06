@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Slider, Service, Course, TeamMember
+from .models import Slider, Service, Course, TeamMember , PromoCard 
 # Create your views here.
 
 
@@ -14,5 +14,8 @@ def landing(request):
         "services": services,
         "courses": courses,
         "team": team,
+        "club_card": PromoCard.objects.get(key="club"),
+        "activity_card": PromoCard.objects.get(key="activity"),
+  
     }
     return render(request, "home/landing.html", context)
