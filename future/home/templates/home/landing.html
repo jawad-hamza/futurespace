@@ -115,6 +115,45 @@
   </div>
 </section>
 {# ================= END PROMO / NAVIGATION CARDS SECTION ================= #}
+{# ===== COURSES SECTION ===== #}
+
+<!-- ===== Courses Section ===== -->
+<section id="courses" class="container py-5">
+  <h2 class="text-center mb-5 section-heading" data-aos="fade-down">Our Courses</h2>
+
+  <div class="row justify-content-center">
+
+    {% for course in courses %}
+      <div class="col-sm-6 col-md-4 mb-4"
+           data-aos="flip-up"
+           data-aos-duration="700"
+           data-aos-delay="{{ forloop.counter0|add:'0' }}00">
+        <div class="card h-100 course-card">
+          {% if course.image %}
+            <img src="{{ course.image.url }}" class="card-img-top" alt="{{ course.title }}">
+          {% endif %}
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">{{ course.title }}</h4>
+          </div>
+          <div class="card-body">
+            {% if course.price %}
+              <h1 class="card-title pricing-card-title">
+                ${{ course.price }}<small class="text-muted fw-light">/mo</small>
+              </h1>
+            {% endif %}
+            {% if course.short_description %}
+              <p class="card-text">{{ course.short_description }}</p>
+            {% endif %}
+            <a href="{{ course.get_absolute_url }}" class="w-100 btn btn-lg btn-primary">Buy</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+
+  </div>
+</section>
+
+{# ================= END COURSES SECTION ================= #}
 
 
 
