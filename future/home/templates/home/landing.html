@@ -51,15 +51,15 @@
 <!-- ==== SERVICES SECTION (AFTER SLIDER) ==== -->
 <!-- ================= OUR SERVICES SECTION ================= -->
 <!-- ===== SERVICES SECTION ===== -->
-<section id="services" class="services-section container py-4">
-<div class="service-heading">
+<section id="services" class="services-section container py-2">
+<div class="service-heading py-3 my-1 service-card" data-aos="fade-up">
   <h2>Our Services</h2>
   <p class="subtitle">What we offer to help you grow</p>
 </div>
   <div class="row g-4 justify-content-center">
 
     {% for service in services %}
-    <div class="col-lg-3 col-md-4 col-sm-6">
+    <div class="col-lg-4 col-md-6 col-sm-6 service-card" data-aos="zoom-in">
       <div class="service-card">
 
         <!-- Background image + overlay container -->
@@ -91,6 +91,15 @@
 {% endblock %}
 
 {% block scripts %}
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    // optional global settings
+    once: false,             // whether animation should happen only once — set to false if you want when scrolling back up
+    duration: 600,           // global animation duration (ms)
+    easing: 'ease-out-cubic' // easing function
+  });
+</script>
 <script>
 const swiper = new Swiper(".heroSwiper", {
     loop: true,
