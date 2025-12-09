@@ -19,7 +19,12 @@
 </head>
 
 
-<body class="bg-dark text-light">
+<body class="bg-dark text-light" >
+    {% load static %}
+
+<video id="bgVideo" autoplay muted loop playsinline>
+    <source src="{% static 'home/images/5.mp4' %}" type="video/mp4">
+</video>
 
 <nav class="navbar navbar-expand-lg navbar-dark navbar-future">
     <div class="container">
@@ -63,6 +68,13 @@
         mirror: true       // animate while scrolling back up
     });
 </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      const v = document.getElementById("bgVideo");
+      v.playbackRate = 0.5;   // Slow motion (0.5x)
+  });
+</script>
+
 
 {% block scripts %}{% endblock %}
 

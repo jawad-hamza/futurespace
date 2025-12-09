@@ -1,8 +1,25 @@
 /* ===== Global Theme ===== */
 
 /* ===== EXACT FUTURESPACE CLUB THEME ===== */
+html, body {
+    overflow-x: hidden !important;
+}
 
-body {
+
+#bgVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1; /* Behind everything */
+}
+#bgVideo {
+  filter: brightness(60%);
+} 
+
+/* body {
     background: linear-gradient(
         180deg,
         #1a0933 0%,
@@ -15,10 +32,10 @@ body {
     position: relative;
     overflow-x: hidden;
     background-attachment: fixed;
-}
+} */
 
 /* Subtle inner glow */
-body::before {
+/* body::before {
     content: "";
     position: fixed;
     top: 20%;
@@ -34,7 +51,7 @@ body::before {
     opacity: 0.35;
     pointer-events: none;
     z-index: -1;
-}
+} */
 
 
 
