@@ -6,6 +6,7 @@ html, body {
 }
 
 
+
 #bgVideo {
   position: fixed;
   top: 0;
@@ -57,8 +58,8 @@ html, body {
 
 /* ===== Navbar ===== */
 .navbar {
-    background: rgba(15, 12, 41, 0.7);
-    backdrop-filter: blur(10px);
+    background: transparent !important ;
+    backdrop-filter: blur(40px)  !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -629,6 +630,7 @@ html, body {
   border: none;
   backdrop-filter: blur(8px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+   border-radius: 8px !important;
 }
 
 .course-card:hover {
@@ -655,6 +657,7 @@ html, body {
 
 .course-card .card-body {
   color: #e5e7eb;
+ 
 }
 
 .course-card .pricing-card-title {
@@ -681,3 +684,532 @@ html, body {
   transform: translateY(-3px);
   box-shadow: 0 4px 20px rgba(168, 85, 247, 0.4);
 }
+
+/* ===== END COURSES SECTION ===== */
+/* ===== start team SECTION ===== */
+/* ===== Team Cards ===== */
+.team-section .section-heading {
+  color: #e5e5ff ; /* or your theme’s light purple/white */
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+  text-shadow: 0 0 8px rgba(192,132,252,0.6);
+}
+
+.team-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  cursor: pointer;
+  min-height: 320px;
+  transition: transform 0.8s ease;
+  background: #0f0a20; /* fallback background if image missing */
+}
+
+.team-card:hover {
+  transform: scale(1.02);
+}
+
+.team-card-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.85);
+  transition: transform 0.5s ease;
+}
+
+.team-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.164);
+  backdrop-filter: blur(4px);
+  color: white;
+}
+
+
+.team-card-name {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #c084fc;
+  border-bottom: 2px solid #c084fc;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.team-card-role {
+  margin: 6px 0;
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+.team-card-bio {
+  margin-top: 12px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* On hover reveal bio */
+.team-card:hover .team-card-bg {
+  transform: scale(1.05);
+}
+
+.team-card:hover .team-card-bio {
+  max-height: 200px;  /* or bigger depending on text */
+  opacity: 1;
+}
+
+/* ===== Modal ===== */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(4px);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+.modal-content {
+  background: #1a0b37;
+  padding: 24px;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+  max-width: 90%;
+  width: 300px;
+}
+
+.modal-content h4 {
+  margin-bottom: 16px;
+  font-size: 1.4rem;
+  color: #c084fc;
+}
+
+.modal-content .modal-btn {
+  display: block;
+  margin: 8px auto;
+  padding: 10px 20px;
+  background: #7e22ce;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.modal-content .modal-btn:hover {
+  background: #9a50f5;
+}
+
+.modal-close {
+  margin-top: 16px;
+  background: transparent;
+  border: 1px solid #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.055);
+}
+
+
+/* ===== end team SECTION ===== */
+
+/* ===== start contact SECTION ===== */
+/* ===== Contact Section ===== */
+.contact-section {
+  margin-top: 80px;
+}
+
+.contact-section .section-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #c084fc;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(192,132,252,0.6);
+  margin-bottom: 8px;
+}
+
+.contact-section .section-subtext {
+  font-size: 16px;
+  color: #d1d5db;
+  text-align: center;
+  margin-bottom: 24px;
+  opacity: 0.9;
+}
+
+/* Form controls styling */
+.contact-section .form-control {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(168,85,247,0.4);
+  color: #e5e7eb;
+  border-radius: 10px;
+  backdrop-filter: blur(8px);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-section .form-control:focus {
+  border-color: #a855f7;
+  box-shadow: 0 0 8px rgba(168,85,247,0.4);
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+}
+
+.contact-section .form-label {
+  color: #e5e5f7;
+  font-weight: 500;
+}
+
+.contact-section .btn-future {
+  background: linear-gradient(90deg, #a855f7, #7e22ce);
+  color: #fff;
+  font-weight: 700;
+  padding: 12px 22px;
+  border-radius: 12px;
+  border: none;
+  font-size: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-section .btn-future:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 18px rgba(168,85,247,0.4);
+}
+
+/* Alert box after submit (optional) */
+#contactAlert {
+  font-size: 0.95rem;
+  color: #c084fc;
+  font-weight: 600;
+}
+
+/* ===== End contact SECTION ===== */
+
+/* ===============================
+   FUTURESPACE ACTIVITY TIMELINE
+================================ */
+/* ==============================
+   FUTURESPACE ACTIVITY PAGE
+============================== */
+
+/* HERO */
+.activity-hero {
+    padding: 110px 0 70px;
+    background: linear-gradient(
+        180deg,
+        rgba(45, 18, 80, 0.95),
+        rgba(20, 10, 40, 0.95)
+    );
+}
+
+.activity-title {
+    font-size: 46px;
+    font-weight: 800;
+    color: #f3e8ff;
+    text-shadow: 0 0 25px rgba(168, 85, 247, 0.6);
+}
+
+.activity-subtitle {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #d1d5db;
+}
+
+/* TIMELINE */
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: auto;
+    padding-left: 40px;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 18px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, #a855f7, transparent);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 70px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 10px;
+    top: 24px;
+    width: 16px;
+    height: 16px;
+    background: #a855f7;
+    border-radius: 50%;
+    box-shadow: 0 0 12px #a855f7;
+}
+
+/* CARD */
+.timeline-card {
+    position: relative;
+    background: rgba(255,255,255,0.05);
+    border: 1.5px solid rgba(168,85,247,0.4);
+    border-radius: 20px;
+    padding: 28px 30px;
+    backdrop-filter: blur(14px);
+    transition: 0.35s ease;
+}
+
+.timeline-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 35px rgba(168,85,247,0.4);
+}
+
+/* FEATURED */
+.timeline-card.featured {
+    border-color: #d946ef;
+    box-shadow: 0 0 40px rgba(217,70,239,0.5);
+}
+
+.badge-featured {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: linear-gradient(90deg, #a855f7, #d946ef);
+    padding: 6px 14px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* TEXT */
+.timeline-date {
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #c084fc;
+}
+
+.timeline-title {
+    margin: 8px 0 10px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #f5e9ff;
+}
+
+.timeline-desc {
+    font-size: 15px;
+    color: #d1d5db;
+    margin-bottom: 16px;
+}
+
+/* IMAGE */
+.timeline-image {
+    position: relative;
+    cursor: pointer;
+}
+
+.timeline-image img {
+    width: 100%;
+    max-height: 220px;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+    border-radius: 14px;
+    filter: brightness(0.92);
+}
+
+.image-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 14px;
+    opacity: 0;
+    border-radius: 14px;
+    transition: 0.3s;
+}
+
+.timeline-image:hover .image-overlay {
+    opacity: 1;
+}
+
+/* MODAL */
+.gallery-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-modal.active {
+    display: flex;
+}
+
+.gallery-content {
+    max-width: 90%;
+    width: 900px;
+}
+
+.gallery-content img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    border-radius: 18px;
+}
+
+/* MICRO ANIMATIONS */
+.animate-fade {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.7s ease forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .activity-title {
+        font-size: 30px;
+    }
+    .timeline {
+        padding-left: 30px;
+    }
+    .timeline::before {
+        left: 14px;
+    }
+    .timeline-dot {
+        left: 6px;
+    }
+}
+
+/* ===============================
+/* ===== GALLERY ===== */
+
+.timeline-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.gallery-thumb {
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.gallery-thumb img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.25s ease;
+}
+
+.gallery-thumb:hover img {
+    transform: scale(1.05);
+}
+
+/* MODAL */
+.gallery-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-modal.active {
+    display: flex;
+}
+
+.gallery-content {
+    max-width: 90%;
+    width: 960px;
+}
+
+.gallery-content img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    border-radius: 18px;
+}
+
+   /* END FUTURESPACE ACTIVITY TIMELINE */
+
+   /* ===== YEAR SEPARATOR ===== */
+
+.timeline-year {
+    position: relative;
+    margin: 80px 0 50px;
+    text-align: center;
+}
+
+.timeline-year span {
+    display: inline-block;
+    padding: 8px 28px;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #e9d5ff;
+
+    background: linear-gradient(
+        90deg,
+        rgba(168, 85, 247, 0.9),
+        rgba(217, 70, 239, 0.9)
+    );
+
+    border-radius: 20px;
+    box-shadow:
+        0 0 20px rgba(168, 85, 247, 0.6),
+        0 0 40px rgba(217, 70, 239, 0.35);
+}
+
+/* Keep timeline line continuous */
+
+.timeline-year {
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-year span {
+    position: relative;
+    z-index: 3;
+}
+
+
+.timeline-year span {
+    animation: fadeUp 0.6s ease forwards;
+}
+/* ===== END YEAR SEPARATOR ===== */

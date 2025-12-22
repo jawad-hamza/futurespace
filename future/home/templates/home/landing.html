@@ -152,9 +152,79 @@
 
   </div>
 </section>
-
 {# ================= END COURSES SECTION ================= #}
 
+{# ================= Meet our Team SECTION ================= #}
+<section id="team" class="team-section container py-5" style="overflow : Hidden ;">
+  <h2 class="section-heading text-center mb-5" >Meet Our Team</h2>
+  <div class="row justify-content-center g-4" data-aos="fade-up" data-aos-duration="3000">
+    {% for member in team %}
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="team-card"
+             data-github="{{ member.github|default:'' }}"
+             data-linkedin="{{ member.linkedin|default:'' }}"
+             data-instagram="{{ member.instagram|default:'' }}"
+             onclick="openMemberModal(this)">
+          <div class="team-card-bg" style="background-image: url('{{ member.photo.url }}');"></div>
+
+          <div class="team-card-overlay">
+            <h3 class="team-card-name" style="color : white">{{ member.name }}</h3>
+            <p class="team-card-role">{{ member.role }}</p>
+            <div class="team-card-bio">
+              {{ member.bio|default:"" }}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Modal for social links -->
+<div id="memberModal" class="modal-overlay" onclick="closeMemberModal()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <h4 id="modal-name">Member</h4>
+    <div id="modal-buttons"></div>
+    <button class="modal-close" onclick="closeMemberModal()">Close</button>
+  </div>
+</div>
+{# ================= END Meet our Team SECTION ================= #}
+
+{# =================Contact Us SECTION ================= #}
+<!-- ===== CONTACT US SECTION ===== -->
+<section id="contact" class="contact-section container py-5" style="overflow:Hidden;">
+  <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="800">
+    <h2 class="section-title">Get in Touch</h2>
+    <p class="section-subtext">Have questions? Wanna collaborate? Drop us a message.</p>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-md-8" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+      <form id="contactForm">
+        <div class="form-group mb-3">
+          <label for="contactName" class="form-label">Name</label>
+          <input type="text" class="form-control" id="contactName" placeholder="Your name" required>
+        </div>
+
+        <div class="form-group mb-3">
+          <label for="contactEmail" class="form-label">Email</label>
+          <input type="email" class="form-control" id="contactEmail" placeholder="Your email" required>
+        </div>
+
+        <div class="form-group mb-4">
+          <label for="contactMessage" class="form-label">Message</label>
+          <textarea class="form-control" id="contactMessage" rows="5" placeholder="Tell us what's on your mind..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-future w-100">Send Message</button>
+      </form>
+
+      <div id="contactAlert" class="mt-3 text-center"></div>
+    </div>
+  </div>
+</section>
+
+{# =================END Contact Us SECTION ================= #}
 
 
 {% endblock %}
@@ -188,5 +258,52 @@ const swiper = new Swiper(".heroSwiper", {
         prevEl: ".swiper-button-prev"
     },
 });
+</script>
+<script>
+ function openMemberModal(cardEl) {
+  const name = cardEl.querySelector('.team-card-name').innerText;
+  const github   = cardEl.dataset.github;
+  const linkedin = cardEl.dataset.linkedin;
+  const instagram= cardEl.dataset.instagram;
+
+  const modal = document.getElementById('memberModal');
+  document.getElementById('modal-name').innerText = name;
+
+  const btnContainer = document.getElementById('modal-buttons');
+  btnContainer.innerHTML = ''; // clear previous buttons
+
+  if (github) {
+    const a = document.createElement('a');
+    a.href = github;
+    a.target = '_blank';
+    a.className = 'modal-btn';
+    a.innerText = 'GitHub';
+    btnContainer.append(a);
+  }
+  if (linkedin) {
+    const a = document.createElement('a');
+    a.href = linkedin;
+    a.target = '_blank';
+    a.className = 'modal-btn';
+    a.innerText = 'LinkedIn';
+    btnContainer.append(a);
+  }
+  if (instagram) {
+    const a = document.createElement('a');
+    a.href = instagram;
+    a.target = '_blank';
+    a.className = 'modal-btn';
+    a.innerText = 'Instagram';
+    btnContainer.append(a);
+  }
+
+  modal.classList.add('open');
+}
+
+function closeMemberModal() {
+  const modal = document.getElementById('memberModal');
+  modal.classList.remove('open');
+}
+
 </script>
 {% endblock %}

@@ -75,20 +75,28 @@
   });
 </script>
 <script>
-function openGallery(src) {
-    const modal = document.getElementById('galleryModal');
-    const img = document.getElementById('galleryImage');
-    img.src = src;
-    modal.classList.add('active');
-}
+const modal = document.getElementById("galleryModal");
+const modalImg = document.getElementById("galleryImage");
 
-function closeGallery() {
-    document.getElementById('galleryModal').classList.remove('active');
-}
+document.addEventListener("click", function (e) {
+    const thumb = e.target.closest(".gallery-thumb");
+    if (thumb) {
+        e.stopPropagation();
+        modalImg.src = thumb.dataset.img;
+        modal.classList.add("active");
+    }
+});
+
+modal.addEventListener("click", function () {
+    modal.classList.remove("active");
+});
+
+document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+        modal.classList.remove("active");
+    }
+});
 </script>
-
-
-
 
 
 {% block scripts %}{% endblock %}

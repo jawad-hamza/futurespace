@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Activities | FutureSpace{% endblock %}
+
+{% block meta %}
+<meta name="description" content="Explore FutureSpace activities, workshops, community events, and milestones building Pakistan’s tech ecosystem.">
+<meta property="og:title" content="FutureSpace Activities">
+<meta property="og:description" content="Workshops, community events, and milestones at FutureSpace.">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "FutureSpace",
+  "url": "https://www.futurespaceuk.com",
+  "description": "FutureSpace is a technology and learning community delivering workshops, training programs, and innovation activities.",
+  "sameAs": [
+    "https://www.instagram.com/futurespace.0/",
+    "https://linkedin.com/company/futurespace-0",
+    "https://www.youtube.com/@Futurespace.0"
+
+  ]
+}
+</script>
+
+{% endblock %}
+
+{% block content %}
+
+<section class="activity-hero">
+    <div class="container text-center">
+        <h1 class="activity-title">Our Activities</h1>
+        <p class="activity-subtitle">
+            Building skills, community, and global connections
+        </p>
+    </div>
+</section>
+
+<section class="container my-5">
+    <div class="timeline">
+
+        {% for activity in activities %}
+
+            {% ifchanged activity.date.year %}
+            <!-- YEAR SEPARATOR -->
+            <div class="timeline-year">
+                <span>{{ activity.date.year }}</span>
+            </div>
+            {% endifchanged %}
+
+            <div class="timeline-item animate-fade">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-card {% if activity.is_featured %}featured{% endif %}">
+
+                    {% if activity.is_featured %}
+                    <span class="badge-featured">Featured</span>
+                    {% endif %}
+
+                    <span class="timeline-date">
+                        {{ activity.date|date:"M Y" }}
+                    </span>
+
+                    <h3 class="timeline-title">
+                        {{ activity.title }}
+                    </h3>
+
+                    <p class="timeline-desc">
+                        {{ activity.description|truncatewords:22 }}
+                    </p>
+
+                    {% if activity.images.all %}
+                    <div class="timeline-gallery">
+                        {% for img in activity.images.all %}
+                        <div class="gallery-thumb"
+                             data-img="{{ img.image.url }}">
+                            <img src="{{ img.image.url }}"
+                                 loading="lazy"
+                                 alt="">
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+
+                </div>
+            </div>
+
+        {% endfor %}
+
+    </div>
+</section>
+
+
+<!-- MODAL -->
+<div id="galleryModal" class="gallery-modal">
+    <div class="gallery-content">
+        <img id="galleryImage" src="" alt="">
+    </div>
+</div>
+
+{% endblock %}

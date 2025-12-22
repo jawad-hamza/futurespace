@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FutureSpace Club Proposal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    .section { display: none; }
+    .active-section { display: block; }
+  </style>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
+
+  <!-- HEADER -->
+<header class="bg-black bg-opacity-50 backdrop-blur-md border-b border-purple-500 md:sticky md:top-0
+ z-50">
+
+  <div class="max-w-7xl mx-auto px-6 py-4 
+              grid grid-cols-1 md:grid-cols-3 
+              gap-4 items-center text-center md:text-left">
+
+    <!-- LEFT: Title -->
+    <div>
+      <h1 class="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+        FutureSpace Club
+      </h1>
+      <p class="text-sm text-gray-400">Mirpur, Azad Kashmir</p>
+    </div>
+
+    <!-- CENTER: Button -->
+    <div class="flex justify-center order-2 md:order-none">
+      <a 
+        href="https://forms.gle/JSARRzERGitRzjAP8"
+        class="text-2xl font-extrabold px-10 py-3 rounded-xl 
+               bg-gradient-to-r from-purple-500 to-pink-500 
+               text-white shadow-lg shadow-pink-500/50 
+               animate-pulse hover:scale-110 transition transform duration-300
+               border border-pink-300">
+        JOIN NOW
+      </a>
+    </div>
+
+    <!-- RIGHT: CEO Info -->
+    <div class="text-center md:text-right order-3 md:order-none">
+      <p class="text-sm text-gray-400">Presented by</p>
+      <p class="font-semibold">CEO: Hamza Mahfooz</p>
+    </div>
+
+  </div>
+
+</header>
+
+
+  <!-- NAVIGATION -->
+<nav class="bg-black bg-opacity-30 backdrop-blur-md border-b border-purple-500 md:sticky md:top-20 z-40">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- MOBILE: Hamburger -->
+    <div class="flex items-center justify-between py-3 md:hidden">
+      <span class="text-gray-200 font-semibold">Menu</span>
+      <button id="mobile-nav-toggle" class="p-2 rounded-md border border-purple-500">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+
+    <!-- NAV ITEMS -->
+    <div id="nav"
+         class="hidden md:flex flex-col md:flex-row 
+                space-y-2 md:space-y-0 md:space-x-1 
+                py-3 text-gray-300 md:overflow-x-auto">
+
+      <button class="tab-btn px-6 py-3 flex items-center justify-center md:justify-start 
+                     space-x-2 border-b-2 border-transparent hover:text-white"
+              data-target="overview">
+        <i data-lucide="users"></i><span>Overview</span>
+      </button>
+
+      <button class="tab-btn px-6 py-3 flex items-center justify-center md:justify-start 
+                     space-x-2 border-b-2 border-transparent hover:text-white"
+              data-target="memberships">
+        <i data-lucide="award"></i><span>Memberships</span>
+      </button>
+
+      <button class="tab-btn px-6 py-3 flex items-center justify-center md:justify-start 
+                     space-x-2 border-b-2 border-transparent hover:text-white"
+              data-target="benefits">
+        <i data-lucide="book-open"></i><span>Benefits</span>
+      </button>
+
+      <button class="tab-btn px-6 py-3 flex items-center justify-center md:justify-start 
+                     space-x-2 border-b-2 border-transparent hover:text-white"
+              data-target="calendar">
+        <i data-lucide="calendar"></i><span>Events</span>
+      </button>
+
+      <button class="tab-btn px-6 py-3 flex items-center justify-center md:justify-start 
+                     space-x-2 border-b-2 border-transparent hover:text-white"
+              data-target="terms">
+        <i data-lucide="shield"></i><span>Terms</span>
+      </button>
+
+    </div>
+  </div>
+</nav>
+
+
+  <!-- CONTENT -->
+  <main class="max-w-7xl mx-auto px-6 py-12">
+
+    <!-- OVERVIEW -->
+    <section id="overview" class="section active-section space-y-8">
+      <div class="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-8 md:p-12">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">
+          Empowering Digital Innovators
+        </h2>
+        <p class="text-xl text-purple-100 max-w-3xl">
+          Join the first structured digital learning club in Azad Jammu & Kashmir. 
+          Access premium courses, professional studio space, and expert mentorship.
+        </p>
+      </div>
+
+      <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-8 border border-purple-500">
+        <h3 class="text-2xl font-bold mb-4 text-purple-400">Introduction</h3>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          FutureSpace Club is an innovative membership-based ecosystem designed to empower learners, 
+          creators, and aspiring freelancers with structured benefits, premium access, professional 
+          guidance, and exclusive digital privileges.
+        </p>
+        <p class="text-gray-300 leading-relaxed">
+          Created under FutureSpace, the club provides value-driven learning and media opportunities 
+          that help individuals grow faster in the fields of AI, freelancing, content creation, and 
+          digital technologies.
+        </p>
+      </div>
+
+      <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-8 border border-purple-500">
+        <h3 class="text-2xl font-bold mb-6 text-purple-400">Why Choose FutureSpace Club?</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="flex items-start space-x-3">
+            <div class="w-2 h-2 bg-purple-400 rounded-full mt-2"></div>
+            <div>
+              <h4 class="font-semibold text-purple-300">Massive Savings</h4>
+              <p class="text-gray-400 text-sm">Save 40-60% compared to purchasing courses individually</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <div class="w-2 h-2 bg-purple-400 rounded-full mt-2"></div>
+            <div>
+              <h4 class="font-semibold text-purple-300">Year-Round Learning</h4>
+              <p class="text-gray-400 text-sm">Continuous access vs. one-time course enrollment</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <div class="w-2 h-2 bg-purple-400 rounded-full mt-2"></div>
+            <div>
+              <h4 class="font-semibold text-purple-300">Professional Studio</h4>
+              <p class="text-gray-400 text-sm">Access to equipment without ownership costs</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <div class="w-2 h-2 bg-purple-400 rounded-full mt-2"></div>
+            <div>
+              <h4 class="font-semibold text-purple-300">Expert Mentorship</h4>
+              <p class="text-gray-400 text-sm">Guided learning instead of struggling alone</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <div class="w-2 h-2 bg-purple-400 rounded-full mt-2"></div>
+            <div>
+              <h4 class="font-semibold text-purple-300">Growing Network</h4>
+              <p class="text-gray-400 text-sm">Connect with like-minded digital professionals</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <div class="w-2 h-2 bg-purple-400 rounded-full mt-2"></div>
+            <div>
+              <h4 class="font-semibold text-purple-300">Portfolio Building</h4>
+              <p class="text-gray-400 text-sm">Real projects and hands-on experience</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-8 border border-purple-500">
+        <h3 class="text-2xl font-bold mb-4 text-purple-400">Club Purpose & Mission</h3>
+        <ul class="space-y-3 text-gray-300">
+          <li class="flex items-start"><span class="text-purple-400 mr-3">▸</span><span>Offer cost-effective, long-term learning benefits to the community</span></li>
+          <li class="flex items-start"><span class="text-purple-400 mr-3">▸</span><span>Create a thriving community around digital skills & innovation</span></li>
+          <li class="flex items-start"><span class="text-purple-400 mr-3">▸</span><span>Give creators access to professional studio space and equipment</span></li>
+          <li class="flex items-start"><span class="text-purple-400 mr-3">▸</span><span>Provide mentorship and personal growth opportunities</span></li>
+          <li class="flex items-start"><span class="text-purple-400 mr-3">▸</span><span>Build sustainable, recurring value for members</span></li>
+          <li class="flex items-start"><span class="text-purple-400 mr-3">▸</span><span>Support individuals starting freelancing or content creation journeys</span></li>
+          <li class="flex items-start"><span class="text-purple-400 mr-3">▸</span><span>Strengthen FutureSpace's ecosystem and expand educational reach</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- MEMBERSHIPS -->
+    <section id="memberships" class="section space-y-8">
+      <h2 class="text-4xl font-bold text-center mb-8">Membership Tiers</h2>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Silver -->
+        <div class="bg-gradient-to-br from-gray-700 to-gray-800 rounded-xl p-8 border-2 border-gray-500 hover:border-gray-400 transition-all transform hover:scale-105">
+          <div class="flex items-center justify-between mb-6">
+            <h3 class="text-3xl font-bold text-gray-300">Silver</h3>
+            <i data-lucide="award" class="text-gray-400" style="width:40px;height:40px;"></i>
+          </div>
+          <div class="mb-6">
+            <p class="text-5xl font-bold text-white mb-2">1,450 PKR</p>
+            <p class="text-gray-400">12 Months Validity</p>
+            <p class="text-sm text-gray-500 mt-1">Limited to 500 slots</p>
+          </div>
+          <div class="space-y-3 mb-6">
+            <div class="flex items-start"><span class="text-green-400 mr-2">✓</span><span class="text-gray-300"><strong>20% Discount</strong> on All Courses</span></div>
+            <div class="flex items-start"><span class="text-green-400 mr-2">✓</span><span class="text-gray-300">Twice-a-Month <strong>Studio Access</strong></span></div>
+            <div class="flex items-start"><span class="text-green-400 mr-2">✓</span><span class="text-gray-300">Community Updates & Events</span></div>
+            <div class="flex items-start"><span class="text-green-400 mr-2">✓</span><span class="text-gray-300">FutureSpace Club Community Access</span></div>
+            <div class="flex items-start"><span class="text-green-400 mr-2">✓</span><span class="text-gray-300">Digital Membership Card</span></div>
+          </div>
+          <div class="bg-black bg-opacity-30 rounded-lg p-4">
+            <p class="text-sm text-gray-400"><strong>Payment:</strong> Advance | <strong>Refund:</strong> Non-refundable</p>
+          </div>
+        </div>
+
+        <!-- Gold -->
+        <div class="bg-gradient-to-br from-yellow-600 to-yellow-700 rounded-xl p-8 border-2 border-yellow-400 hover:border-yellow-300 transition-all transform hover:scale-105 relative overflow-hidden">
+          <div class="absolute top-0 right-0 bg-yellow-400 text-yellow-900 px-4 py-1 text-sm font-bold rounded-bl-lg">MOST POPULAR</div>
+          <div class="flex items-center justify-between mb-6">
+            <h3 class="text-3xl font-bold text-yellow-100">Gold</h3>
+            <i data-lucide="award" class="text-yellow-300" style="width:40px;height:40px;"></i>
+          </div>
+          <div class="mb-6">
+            <p class="text-5xl font-bold text-white mb-2">25,000 PKR</p>
+            <p class="text-yellow-200">6 Months Validity</p>
+            <p class="text-sm text-yellow-300 mt-1">Exclusive - Only 20 slots</p>
+          </div>
+          <div class="space-y-3 mb-6">
+            <div class="flex items-start"><span class="text-yellow-200 mr-2">★</span><span class="text-white"><strong>40% Discount</strong> on All Courses</span></div>
+            <div class="flex items-start"><span class="text-yellow-200 mr-2">★</span><span class="text-white">Twice-a-Month Studio Access <strong>(Priority)</strong></span></div>
+            <div class="flex items-start"><span class="text-yellow-200 mr-2">★</span><span class="text-white"><strong>7-Day Fiverr 1:1 Mentorship</strong></span></div>
+            <div class="flex items-start"><span class="text-yellow-200 mr-2">★</span><span class="text-white">Free <strong>3-Day AI Course</strong></span></div>
+            <div class="flex items-start"><span class="text-yellow-200 mr-2">★</span><span class="text-white">FutureSpace Premium Circle Access</span></div>
+            <div class="flex items-start"><span class="text-yellow-200 mr-2">★</span><span class="text-white">Priority Support & Event Registration</span></div>
+            <div class="flex items-start"><span class="text-yellow-200 mr-2">★</span><span class="text-white">Premium Digital Badge</span></div>
+          </div>
+          <div class="bg-black bg-opacity-30 rounded-lg p-4">
+            <p class="text-sm text-yellow-100"><strong>Payment:</strong> Advance | <strong>Refund:</strong> Non-refundable</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-8 border border-purple-500 mt-12">
+        <h3 class="text-2xl font-bold mb-6 text-purple-400">Ambassador Program</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h4 class="font-semibold text-lg mb-3 text-purple-300">Official Ambassadors</h4>
+            <div class="space-y-2">
+              <div class="bg-black bg-opacity-30 rounded-lg p-3"><p class="font-semibold">Dawood Mehmood</p></div>
+              <div class="bg-black bg-opacity-30 rounded-lg p-3"><p class="font-semibold">Saif</p></div>
+              <div class="bg-black bg-opacity-30 rounded-lg p-3"><p class="font-semibold">Talha</p></div>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-semibold text-lg mb-3 text-purple-300">Commission Structure</h4>
+            <div class="bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg p-6">
+              <p class="text-4xl font-bold mb-2">10%</p>
+              <p class="text-purple-100">Commission on each membership sold</p>
+            </div>
+            <div class="mt-4 bg-black bg-opacity-30 rounded-lg p-4">
+              <p class="text-sm text-gray-400">Ambassadors receive marketing materials and dedicated support to help grow the community.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-8 border border-purple-500">
+        <h3 class="text-2xl font-bold mb-6 text-purple-400">Registration Process</h3>
+        <div class="grid md:grid-cols-5 gap-4">
+          <div class="text-center">
+            <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">1</div>
+            <h4 class="font-semibold mb-1">Fill Form</h4>
+            <p class="text-sm text-gray-400">Complete membership application</p>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">2</div>
+            <h4 class="font-semibold mb-1">Make Payment</h4>
+            <p class="text-sm text-gray-400">Pay membership fee in advance</p>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">3</div>
+            <h4 class="font-semibold mb-1">Share Proof</h4>
+            <p class="text-sm text-gray-400">Submit payment confirmation</p>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">4</div>
+            <h4 class="font-semibold mb-1">Get ID</h4>
+            <p class="text-sm text-gray-400">Receive your membership ID</p>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">5</div>
+            <h4 class="font-semibold mb-1">Join Community</h4>
+            <p class="text-sm text-gray-400">Added to exclusive channels</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- BENEFITS -->
+    <section id="benefits" class="section space-y-8">
+      <h2 class="text-4xl font-bold text-center mb-8">Member Benefits & Features</h2>
+
+      <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-8 border border-purple-500">
+        <h3 class="text-2xl font-bold mb-6 text-purple-400">Course Discounts</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-gradient-to-r from-gray-700 to-gray-800 rounded-lg p-6">
+            <h4 class="text-xl font-bold mb-2">Silver Members</h4>
+            <p class="text-5xl font-bold text-gray-300 mb-2">20% OFF</p>
+            <p class="text-gray-400">On all FutureSpace courses</p>
+          </div>
+          <div class="bg-gradient-to-r from-yellow-600 to-yellow-700 rounded-lg p-6">
+            <h4 class="text-xl font-bold mb-2">Gold Members</h4>
+            <p class="text-5xl font-bold text-yellow-100 mb-2">40% OFF</p>
+            <p class="text-yellow-200">On all FutureSpace courses</p>
+          </div>
+        </div>
+        <div class="mt-4 bg-black bg-opacity-30 rounded-lg p-4">
+          <p class="text-sm text-gray-400">
+            <strong>Note:</strong> Discounts apply only during active membership period. Cannot be combined with other offers. One discount per course per member.
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-8 border border-purple-500">
+        <h3 class="text-2xl font-bold mb-6 text-purple-400">Studio Access Policy</h3>
+        <div class="space-y-4">
+          <div class="bg-black bg-opacity-30 rounded-lg p-4">
+            <h4 class="font-semibold mb-2 text-purple-300">Frequency</h4>
+            <p class="text-gray-300">Twice per month for all members | Priority booking for Gold</p>
+          </div>
+          <div class="bg-black bg-opacity-30 rounded-lg p-4">
+            <h4 class="font-semibold mb-2 text-purple-300">Booking Requirements</h4>
+            <p class="text-gray-300">Pre-booking mandatory 48 hours in advance via official system</p>
+          </div>
+          <div class="bg-black bg-opacity-30 rounded-lg p-4">
+            <h4 class="font-semibold mb-2 text-purple-300">Available Equipment</h4>
+            <p class="text-gray-300">Professional cameras, lighting, audio equipment, editing workstations</p>
+          </div>
+          <div class="bg-black bg-opacity-30 rounded-lg p-4">
+            <h4 class="font-semibold mb-2 text-purple-300">Session Guidelines</h4>
+            <p class="text-gray-300">
+              Members must arrive on time, return equipment in original condition, and follow posted studio guidelines. Equipment damage will be charged at market rates.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-r from-yellow-600 to-yellow-700 rounded-xl p-8 border-2 border-yellow-400">
+        <h3 class="text-2xl font-bold mb-6 text-yellow-100">Fiverr 1:1 Mentorship (Gold Only)</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-semibold mb-3 text-yellow-200">What's Included:</h4>
+            <ul class="space-y-2 text-white">
+              <li class="flex items-start"><span class="text-yellow-200 mr-2">✓</span>Fiverr profile optimization</li>
+              <li class="flex items-start"><span class="text-yellow-200 mr-2">✓</span>Gig creation and SEO strategies</li>
+              <li class="flex items-start"><span class="text-yellow-200 mr-2">✓</span>Order handling best practices</li>
+              <li class="flex items-start"><span class="text-yellow-200 mr-2">✓</span>Pricing and monetization guidance</li>
+              <li class="flex items-start"><span class="text-yellow-200 mr-2">✓</span>Client communication techniques</li>
+            </ul>
+          </div>
+          <div class="bg-black bg-opacity-30 rounded-lg p-6">
+            <h4 class="font-semibold mb-3 text-yellow-200">Important Disclaimer:</h4>
+            <p class="text-yellow-100 text-sm leading-relaxed">
+              Mentorship provides professional guidance and training. However, it does not guarantee Fiverr orders, client acquisition, specific income levels, or gig rankings. Success depends on individual effort, market conditions, and skill application.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-8 border border-purple-500">
+        <h3 class="text-2xl font-bold mb-6 text-purple-400">Why FutureSpace Club Is Unique</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-black bg-opacity-30 rounded-lg p-6">
+            <h4 class="font-semibold mb-2 text-purple-300">First in AJK</h4>
+            <p class="text-gray-400 text-sm">The first structured digital learning club in Azad Jammu & Kashmir</p>
+          </div>
+          <div class="bg-black bg-opacity-30 rounded-lg p-6">
+            <h4 class="font-semibold mb-2 text-purple-300">Affordable Access</h4>
+            <p class="text-gray-400 text-sm">Premium education and facilities at accessible price points</p>
+          </div>
+          <div class="bg-black bg-opacity-30 rounded-lg p-6">
+            <h4 class="font-semibold mb-2 text-purple-300">Real Mentorship</h4>
+            <p class="text-gray-400 text-sm">Direct guidance from experienced professionals, not just recorded videos</p>
+          </div>
+          <div class="bg-black bg-opacity-30 rounded-lg p-6">
+            <h4 class="font-semibold mb-2 text-purple-300">Professional Studio</h4>
+            <p class="text-gray-400 text-sm">Access to equipment worth lakhs without ownership costs</p>
+          </div>
+          <div class="bg-black bg-opacity-30 rounded-lg p-6">
+            <h4 class="font-semibold mb-2 text-purple-300">Active Community</h4>
+            <p class="text-gray-400 text-sm">Network with ambitious learners and creators</p>
+          </div>
+          <div class="bg-black bg-opacity-30 rounded-lg p-6">
+            <h4 class="font-semibold mb-2 text-purple-300">Proven Track Record</h4>
+            <p class="text-gray-400 text-sm">Backed by FutureSpace's established digital presence</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- CALENDAR -->
+    <section id="calendar" class="section space-y-8">
+      <h2 class="text-4xl font-bold text-center mb-8">Events & Activities Calendar</h2>
+
+      <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-8 border border-purple-500">
+        <p class="text-gray-300 mb-6">
+          All workshops, meet-ups, and live sessions are planned and executed by the CEO and management team.
+        </p>
+
+        <div class="space-y-4">
+          <div class="bg-black bg-opacity-30 rounded-lg p-6 hover:bg-opacity-40 transition-all">
+            <div class="flex items-start justify-between">
+              <div class="flex-1">
+                <div class="flex items-center space-x-3 mb-2">
+                  <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Monthly</span>
+                  <h4 class="text-xl font-bold text-purple-300">Networking Meet-up</h4>
+                </div>
+                <p class="text-gray-400">Connect with fellow members, share experiences, and build relationships</p>
+              </div>
+              <i data-lucide="calendar" class="text-purple-400 ml-4" style="width:24px;height:24px;"></i>
+            </div>
+          </div>
+
+          <div class="bg-black bg-opacity-30 rounded-lg p-6 hover:bg-opacity-40 transition-all">
+            <div class="flex items-start justify-between">
+              <div class="flex-1">
+                <div class="flex items-center space-x-3 mb-2">
+                  <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Twice/Month</span>
+                  <h4 class="text-xl font-bold text-purple-300">Creator Studio Days</h4>
+                </div>
+                <p class="text-gray-400">Dedicated studio access days with technical support available</p>
+              </div>
+              <i data-lucide="calendar" class="text-purple-400 ml-4" style="width:24px;height:24px;"></i>
+            </div>
+          </div>
+
+          <div class="bg-black bg-opacity-30 rounded-lg p-6 hover:bg-opacity-40 transition-all">
+            <div class="flex items-start justify-between">
+              <div class="flex-1">
+                <div class="flex items-centered space-x-3 mb-2">
+                  <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Bi-Monthly</span>
+                  <h4 class="text-xl font-bold text-purple-300">AI Hands-on Workshop</h4>
+                </div>
+                <p class="text-gray-400">Practical AI tools training, prompt engineering, and use cases</p>
+              </div>
+              <i data-lucide="calendar" class="text-purple-400 ml-4" style="width:24px;height:24px;"></i>
+            </div>
+          </div>
+
+          <div class="bg-black bg-opacity-30 rounded-lg p-6 hover:bg-opacity-40 transition-all">
+            <div class="flex items-start justify-between">
+              <div class="flex-1">
+                <div class="flex items-center space-x-3 mb-2">
+                  <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Quarterly</span>
+                  <h4 class="text-xl font-bold text-purple-300">Freelancing Masterclass</h4>
+                </div>
+                <p class="text-gray-400">Deep dive into platforms, client management, and scaling strategies</p>
+              </div>
+              <i data-lucide="calendar" class="text-purple-400 ml-4" style="width:24px;height:24px;"></i>
+            </div>
+          </div>
+
+          <div class="bg-black bg-opacity-30 rounded-lg p-6 hover:bg-opacity-40 transition-all">
+            <div class="flex items-start justify-between">
+              <div class="flex-1">
+                <div class="flex items-center space-x-3 mb-2">
+                  <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Monthly</span>
+                  <h4 class="text-xl font-bold text-purple-300">Community Challenge</h4>
+                </div>
+                <p class="text-gray-400">Video challenge, branding challenge, AI prompt challenge with prizes</p>
+              </div>
+              <i data-lucide="calendar" class="text-purple-400 ml-4" style="width:24px;height:24px;"></i>
+            </div>
+          </div>
+
+          <div class="bg-black bg-opacity-30 rounded-lg p-6 hover:bg-opacity-40 transition-all">
+            <div class="flex items-start justify-between">
+              <div class="flex-1">
+                <div class="flex items-center space-x-3 mb-2">
+                  <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Annual</span>
+                  <h4 class="text-xl font-bold text-purple-300">FutureSpace Summit</h4>
+                </div>
+                <p class="text-gray-400">Major networking event with industry speakers and portfolio showcases</p>
+              </div>
+              <i data-lucide="calendar" class="text-purple-400 ml-4" style="width:24px;height:24px;"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl p-8">
+        <h3 class="text-2xl font-bold mb-4">Event Notifications</h3>
+        <p class="text-purple-100 mb-4">
+          Members receive advance notifications for all events through official community channels. CEO & team organize everything.
+        </p>
+        <p class="text-sm text-purple-200">
+          Schedule may be adjusted based on member availability and operational requirements. Changes will be announced at least 7 days in advance.
+        </p>
+      </div>
+    </section>
+
+    <!-- TERMS -->
+    <section id="terms" class="section space-y-6">
+
+      <h2 class="text-4xl font-bold text-center mb-8">Terms & Conditions</h2>
+
+      <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 border border-purple-500">
+        <p class="text-sm text-gray-400 mb-4">
+          <strong>Effective Date:</strong> January 2025 | <strong>Last Updated:</strong> January 2025
+        </p>
+        <p class="text-gray-300">By registering for FutureSpace Club membership, you (“Member”) agree to be bound by these Terms & Conditions. Please read carefully before proceeding.</p>
+      </div>
+
+      <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 border border-purple-500">
+        <h3 class="text-xl font-bold mb-4 text-purple-400">1. MEMBERSHIP REGISTRATION & PAYMENT</h3>
+        <ul class="space-y-2 text-gray-300 text-sm">
+          <li>All memberships require advance payment in full</li>
+          <li>Membership becomes active only after payment verification and issuance of Membership ID</li>
+          <li>Payment methods accepted: Bank Transfer / JazzCash / EasyPaisa</li>
+          <li>Members must provide accurate information during registration</li>
+          <li>False information may result in membership cancellation without refund</li>
+        </ul>
+      </div>
+
+      <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 border border-purple-500">
+        <h3 class="text-xl font-bold mb-4 text-purple-400">2. MEMBERSHIP VALIDITY & RENEWAL</h3>
+        <ul class="space-y-2 text-gray-300 text-sm">
+          <li>Silver Membership: Valid for 12 months from activation date</li>
+          <li>Gold Membership: Valid for 6 months from activation date</li>
+          <li>Benefits expire immediately upon membership expiration</li>
+          <li>Renewal requires new payment at current membership rates</li>
+          <li>FutureSpace reserves the right to adjust membership fees with 30 days' notice</li>
+        </ul>
+      </div>
+
+      <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 border border-purple-500">
+        <h3 class="text-xl font-bold mb-4 text-purple-400">3. REFUND & CANCELLATION POLICY</h3>
+        <ul class="space-y-2 text-gray-300 text-sm">
+          <li>All memberships are NON-REFUNDABLE under any circumstances including: change of mind, relocation, inability to use benefits, or dissatisfaction</li>
+          <li>Memberships are NON-TRANSFERABLE and cannot be gifted, sold, or assigned</li>
+          <li>In case of permanent relocation outside Pakistan, membership may be converted to online-only benefits at management discretion</li>
+        </ul>
+      </div>
+
+      <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 border border-purple-500">
+        <h3 class="text-xl font-bold mb-4 text-purple-400">4. STUDIO ACCESS POLICY</h3>
+        <ul class="space-y-2 text-gray-300 text-sm">
+          <li>Studio access granted twice per month for all members</li>
+          <li>Gold members receive priority booking</li>
+          <li>Pre-booking mandatory at least 48 hours in advance</li>
+          <li>Each session limited to scheduled duration unless extended with approval</li>
+          <li>Members must arrive on time (late arrivals forfeit their slot)</li>
+          <li>Members must return equipment in original condition</li>
+          <li>Studio may be unavailable due to maintenance or events (24-hour notice when possible)</li>
+          <li>Equipment damage will be charged at actual market repair cost</li>
+          <li>Persistent misuse results in studio access revocation</li>
+        </ul>
+      </div>
+
+      <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 border border-purple-500">
+        <h3 class="text-xl font-bold mb-4 text-purple-400">5. COURSE DISCOUNTS</h3>
+        <ul class="space-y-2 text-gray-300 text-sm">
+          <li>Silver Members: 20% discount on all FutureSpace courses</li>
+          <li>Gold Members: 40% discount on all FutureSpace courses</li>
+          <li>Discounts apply only during active membership period</li>
+          <li>Discounts cannot be combined with other promotional offers</li>
+          <li>One discount per course per member</li>
+          <li>Discounts do not apply to third-party courses unless explicitly stated</li>
+        </ul>
+      </div>
+
+      <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 border border-purple-500">
+        <h3 class="text-xl font-bold mb-4 text-purple-400">6. MENTORSHIP PROGRAM (Gold Members Only)</h3>
+        <ul class="space-y-2 text-gray-300 text-sm">
+          <li>Includes 7-day intensive 1:1 Fiverr mentorship</li>
+          <li>Covers gig setup, optimization, and monetization strategy</li>
+          <li>Scheduling depends on mentor availability</li>
+          <li>Members must complete assigned tasks between sessions</li>
+          <li>Members must attend scheduled meetings punctually</li>
+          <li>Required: laptop, stable internet, active Fiverr account</li>
+          <li>Mentorship provides guidance but does NOT guarantee Fiverr orders, clients, income, or gig rankings</li>
+          <li>Missed sessions cannot be rescheduled except for documented emergencies</li>
+        </ul>
+      </div>
+
+      <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 border border-purple-500">
+        <h3 class="text-xl font-bold mb-4 text-purple-400">7. COMMUNITY ACCESS & CONDUCT</h3>
+        <ul class="space-y-2 text-gray-300 text-sm">
+          <li>Members gain access to FutureSpace Club private channels</li>
+          <li>PROHIBITED: Spam, harassment, hate speech, discrimination, pirated content, impersonating staff</li>
+          <li>Violations may result in: 1st offense = warning, 2nd = 7-day suspension, 3rd = permanent removal without refund</li>
+        </ul>
+      </div>
+
+      <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 border border-purple-500">
+        <h3 class="text-xl font-bold mb-4 text-purple-400">8. CODE OF CONDUCT</h3>
+        <ul class="space-y-2 text-gray-300 text-sm">
+          <li>Maintain professional behavior in all FutureSpace interactions</li>
+          <li>Zero tolerance for sexual harassment, bullying, intimidation, threats, or discrimination</li>
+          <li>Do not misuse FutureSpace branding for unauthorized commercial purposes</li>
+          <li>Serious misconduct results in immediate termination without refund</li>
+        </ul>
+      </div>
+
+      <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 border border-purple-500">
+        <h3 class="text-xl font-bold mb-4 text-purple-400">9. PRIVACY & DATA PROTECTION</h3>
+        <ul class="space-y-2 text-gray-300 text-sm">
+          <li>FutureSpace collects personal information for membership management only</li>
+          <li>Your data is stored securely and NOT sold to third parties</li>
+          <li>Photos/videos from events may be used for marketing (you can opt out)</li>
+          <li>Members may request their data by contacting support</li>
+          <li>Full compliance with Pakistan's data protection regulations</li>
+        </ul>
+      </div>
+
+      <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 border border-purple-500">
+        <h3 class="text-xl font-bold mb-4 text-purple-400">10. SCHEDULE & BENEFIT MODIFICATIONS</h3>
+        <ul class="space-y-2 text-gray-300 text-sm">
+          <li>FutureSpace may modify event schedules, workshop timings, or studio hours</li>
+          <li>Major changes announced at least 7 days in advance</li>
+          <li>If a benefit becomes permanently unavailable, comparable alternative or partial credit will be offered</li>
+        </ul>
+      </div>
+
+      <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 border border-purple-500">
+        <h3 class="text-xl font-bold mb-4 text-purple-400">11. INTELLECTUAL PROPERTY</h3>
+        <ul class="space-y-2 text-gray-300 text-sm">
+          <li>All course materials, videos, and resources remain property of FutureSpace</li>
+          <li>Members may NOT record/screenshot content, share login credentials, or redistribute materials</li>
+          <li>Violation of IP rights will result in legal action</li>
+        </ul>
+      </div>
+
+      <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 border border-purple-500">
+        <h3 class="text-xl font-bold mb-4 text-purple-400">12. LIMITATION OF LIABILITY</h3>
+        <ul class="space-y-2 text-gray-300 text-sm">
+          <li>FutureSpace is NOT responsible for freelance success, income, job placement, client acquisition, lost belongings, or business decisions</li>
+          <li>Members participate at their own risk</li>
+          <li>Total liability limited to membership fee paid</li>
+        </ul>
+      </div>
+
+      <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 border border-purple-500">
+        <h3 class="text-xl font-bold mb-4 text-purple-400">13. FORCE MAJEURE</h3>
+        <ul class="space-y-2 text-gray-300 text-sm">
+          <li>Not liable for service disruption due to natural disasters, government restrictions, power/internet outages, or civil unrest</li>
+          <li>Memberships may be extended on case-by-case basis</li>
+        </ul>
+      </div>
+
+      <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 border border-purple-500">
+        <h3 class="text-xl font-bold mb-4 text-purple-400">14. TERMINATION</h3>
+        <ul class="space-y-2 text-gray-300 text-sm">
+          <li>FutureSpace may terminate membership immediately for serious misconduct, illegal activities, safety threats, or repeated violations</li>
+          <li>Terminated members forfeit all benefits without refund</li>
+          <li>Members may voluntarily cancel but will not receive refunds</li>
+        </ul>
+      </div>
+
+      <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 border border-purple-500">
+        <h3 class="text-xl font-bold mb-4 text-purple-400">15. DISPUTE RESOLUTION</h3>
+        <ul class="space-y-2 text-gray-300 text-sm">
+          <li>Disputes first addressed through good-faith negotiation</li>
+          <li>Unresolved disputes settled under jurisdiction of Mirpur, Azad Kashmir courts</li>
+          <li>Terms governed by laws of Pakistan and Azad Kashmir</li>
+        </ul>
+      </div>
+
+      <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 border border-purple-500">
+        <h3 class="text-xl font-bold mb-4 text-purple-400">16. AMENDMENTS</h3>
+        <ul class="space-y-2 text-gray-300 text-sm">
+          <li>FutureSpace may update Terms at any time</li>
+          <li>Members notified of significant changes via email/community</li>
+          <li>Continued use after changes constitutes acceptance</li>
+        </ul>
+      </div>
+
+      <div class="bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl p-8">
+        <h3 class="text-2xl font-bold mb-4">17. ACCEPTANCE & ACKNOWLEDGMENT</h3>
+        <ul class="space-y-2 text-white">
+          <li class="flex items-start"><span class="text-yellow-300 mr-2">✓</span><span>Read and understood these Terms & Conditions in full</span></li>
+          <li class="flex items-start"><span class="text-yellow-300 mr-2">✓</span><span>Agreed to abide by all rules and policies</span></li>
+          <li class="flex items-start"><span class="text-yellow-300 mr-2">✓</span><span>Acknowledged that membership is non-refundable and non-transferable</span></li>
+          <li class="flex items-start"><span class="text-yellow-300 mr-2">✓</span><span>Verified that all information provided is accurate</span></li>
+        </ul>
+      </div>
+
+      <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 border border-purple-500 text-center">
+        <h3 class="text-xl font-bold mb-4 text-purple-400">Contact Information</h3>
+        <p class="text-gray-300 mb-2">For questions, concerns, or support:</p>
+        <p class="text-white font-semibold">FutureSpace Club</p>
+        <p class="text-gray-400">Email: info@futurespace.com</p>
+        <p class="text-gray-400">Phone: [Insert Contact Number]</p>
+        <p class="text-gray-400">Address: Mirpur, Azad Kashmir, Pakistan</p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-black bg-opacity-50 border-t border-purple-500 py-8 text-center text-gray-400">
+    <div class="max-w-7xl mx-auto px-6">
+      <p>© 2024 FutureSpace Club. All rights reserved.</p>
+      <p class="text-sm mt-2">Contact: info@futurespace.com | Mirpur, Azad Kashmir</p>
+    </div>
+  </footer>
+
+  <!-- TAB SWITCHING SCRIPT -->
+<script>
+  lucide.createIcons();
+
+  const buttons = document.querySelectorAll(".tab-btn");
+  const sections = document.querySelectorAll(".section");
+
+  // Activate a tab
+  function activateTab(btn) {
+    const target = btn.getAttribute("data-target");
+
+    // Remove active styles from all
+    buttons.forEach(b => b.classList.remove("border-purple-400", "text-purple-400"));
+
+    // Add to selected tab
+    btn.classList.add("border-purple-400", "text-purple-400");
+
+    // Hide all sections
+    sections.forEach(sec => sec.classList.remove("active-section"));
+
+    // Show selected section
+    document.getElementById(target).classList.add("active-section");
+  }
+
+  // Handle tab clicks
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => activateTab(btn));
+  });
+
+  // Auto-select the first tab
+  activateTab(buttons[0]);
+
+  // MOBILE MENU TOGGLE
+  const mobileToggle = document.getElementById("mobile-nav-toggle");
+  const nav = document.getElementById("nav");
+
+  if (mobileToggle && nav) {
+    mobileToggle.addEventListener("click", () => {
+      nav.classList.toggle("hidden");
+      nav.classList.toggle("flex");  // flex on mobile when expanded
+    });
+  }
+</script>
+
+
+</body>
+</html>
