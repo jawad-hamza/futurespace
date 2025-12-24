@@ -1,0 +1,340 @@
+{% extends "home/base.html" %}
+{% block title %}FutureSpace{% endblock %}
+
+{% block content %}
+
+<!-- ==== HERO SLIDER WITH PARALLAX ==== -->
+<div class="swiper heroSwiper">
+    <div class="swiper-wrapper">
+
+        {% for slide in sliders %}
+        <div class="swiper-slide">
+
+            <div class="hero-slide">
+
+                <!-- Background layer -->
+                <div class="hero-slide-bg"
+                    data-swiper-parallax="40%"
+                    style="background-image: url('{{ slide.image.url }}');">
+                </div>
+
+                <!-- Text Overlay -->
+                <div class="hero-overlay" data-swiper-parallax="-100">
+                    {% if slide.title %}
+                        <h1 class="hero-title">{{ slide.title }}</h1>
+                    {% endif %}
+                    {% if slide.subtitle %}
+                        <p class="hero-sub">{{ slide.subtitle }}</p>
+                    {% endif %}
+                    {% if slide.button_text %}
+                        <a href="{{ slide.button_link }}" class="btn-join mt-3">{{ slide.button_text }}</a>
+                    {% endif %}
+                </div>
+
+            </div>
+
+        </div>
+        {% endfor %}
+
+    </div>
+
+    <!-- Slider Arrows & Pagination -->
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+
+</div>
+<!-- END HERO SLIDER -->
+
+<!-- ===== SERVICES SECTION ===== -->
+<section id="services" class="services-section container py-2">
+<div class="service-heading py-3 my-1 service-card" data-aos="fade-up">
+  <h2 style="color: #ffffffff;" >Our Services</h2>
+  <p class="subtitle">What we offer to help you grow</p>
+</div>
+  <div class="row g-4 justify-content-center">
+
+    {% for service in services %}
+    <div class="col-lg-4 col-md-6 col-sm-6 service-card" data-aos="zoom-in">
+      <div class="service-card">
+
+        <!-- Background image + overlay container -->
+        <div class="service-bg" style="background-image: url('{{ service.image.url }}');">
+
+          <!-- Always visible title overlay -->
+          <div class="service-title-overlay">
+            <h3 class="service-title">{{ service.title }}</h3>
+          </div>
+
+          <!-- Hidden description, appears on hover -->
+          <div class="service-desc-overlay">
+            <p class="service-desc">{{ service.description }}</p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+</section>
+<!-- ================= END OUR SERVICES SECTION ================= -->
+
+
+{# ===== PROMO / NAVIGATION CARDS SECTION ===== #}
+<section id="promo" class="promo-section container-fluid px-0 py-5">
+  <div class="row g-0">
+
+    {% if club_card %}
+    <div class="col-md-6 promo-card-col" data-aos="fade-right" data-aos-duration="1500">
+      <a href="{{ club_card.link|default:'#' }}" class="d-block">
+        <div class="promo-card promo-left" style="background-image: url('{{ club_card.image.url }}');">
+          <div class="promo-overlay">
+            <h2 class="promo-title" style="color: white;">{{ club_card.title }}</h2>
+            <p class="promo-desc">{{ club_card.description }}</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    {% endif %}
+
+    {% if activity_card %}
+    <div class="col-md-6 promo-card-col " data-aos="fade-left" data-aos-duration="1500">
+      <a href="{{ activity_card.link|default:'#' }}" class="d-block">
+        <div class="promo-card promo-right" style="background-image: url('{{ activity_card.image.url }}');">
+          <div class="promo-overlay">
+            <h2 class="promo-title " style="color: white;">{{ activity_card.title }}</h2>
+            <p class="promo-desc">{{ activity_card.description }}</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    {% endif %}
+
+  </div>
+</section>
+{# ================= END PROMO / NAVIGATION CARDS SECTION ================= #}
+{# ===== COURSES SECTION ===== #}
+
+<!-- ===== Courses Section ===== -->
+<section id="courses" class="container py-5">
+  <h2 class="text-center mb-5 section-heading" data-aos="fade-down" style="color: #ffffffff;">Our Courses</h2>
+
+  <div class="row justify-content-center">
+
+    {% for course in courses %}
+      <div class="col-sm-6 col-md-4 mb-4"
+           data-aos="flip-up"
+           data-aos-duration="700"
+           data-aos-delay="{{ forloop.counter0|add:'0' }}00">
+        <div class="card h-100 course-card">
+          {% if course.image %}
+            <img src="{{ course.image.url }}" class="card-img-top" alt="{{ course.title }}">
+          {% endif %}
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">{{ course.title }}</h4>
+          </div>
+          <div class="card-body">
+            {% if course.price %}
+              <h1 class="card-title pricing-card-title">
+                ${{ course.price }}<small class="text-muted fw-light">/mo</small>
+              </h1>
+            {% endif %}
+            {% if course.short_description %}
+              <p class="card-text">{{ course.short_description }}</p>
+            {% endif %}
+            <a href="{{ course.get_absolute_url }}" class="w-100 btn btn-lg btn-primary">Buy</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+
+  </div>
+</section>
+{# ================= END COURSES SECTION ================= #}
+
+{# ================= Meet our Team SECTION ================= #}
+<section id="team" class="team-section container py-5" style="overflow : Hidden ;">
+  <h2 class="section-heading text-center mb-5" >Meet Our Team</h2>
+  <div class="row justify-content-center g-4" data-aos="fade-up" data-aos-duration="3000">
+    {% for member in team %}
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="team-card"
+             data-github="{{ member.github|default:'' }}"
+             data-linkedin="{{ member.linkedin|default:'' }}"
+             data-instagram="{{ member.instagram|default:'' }}"
+             onclick="openMemberModal(this)">
+          <div class="team-card-bg" style="background-image: url('{{ member.photo.url }}');"></div>
+
+          <div class="team-card-overlay">
+            <h3 class="team-card-name" style="color : white">{{ member.name }}</h3>
+            <p class="team-card-role">{{ member.role }}</p>
+            <div class="team-card-bio">
+              {{ member.bio|default:"" }}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Modal for social links -->
+<div id="memberModal" class="modal-overlay" onclick="closeMemberModal()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <h4 id="modal-name">Member</h4>
+    <div id="modal-buttons"></div>
+    <button class="modal-close" onclick="closeMemberModal()">Close</button>
+  </div>
+</div>
+{# ================= END Meet our Team SECTION ================= #}
+
+{# =================Contact Us SECTION ================= #}
+<!-- ===== CONTACT US SECTION ===== -->
+<section id="contact" class="contact-section container py-5" style="overflow:Hidden;">
+  <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="800">
+    <h2 class="section-title">Get in Touch</h2>
+    <p class="section-subtext">Have questions? Wanna collaborate? Drop us a message.</p>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-md-8" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+      <form id="contactForm" method="post">
+  {% csrf_token %}
+
+  <div class="form-group mb-3">
+    <label>Name</label>
+    <input type="text" name="name" class="form-control" placeholder="Your name" required>
+  </div>
+
+  <div class="form-group mb-3">
+    <label>Email</label>
+    <input type="email" name="email" class="form-control" placeholder="Your email" required>
+  </div>
+
+  <div class="form-group mb-4">
+    <label>Message</label>
+    <textarea name="message" class="form-control" rows="5" placeholder="Tell us what's on your mind..." required></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-future w-100">Send Message</button>
+</form>
+
+<div id="contactAlert" class="mt-3 text-center"></div>
+  </div>
+</section>
+
+{# =================END Contact Us SECTION ================= #}
+
+
+{% endblock %}
+
+{% block scripts %}
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    // optional global settings
+    once: false,             // whether animation should happen only once — set to false if you want when scrolling back up
+    duration: 600,           // global animation duration (ms)
+    easing: 'ease-out-cubic' // easing function
+  });
+</script>
+<script>
+const swiper = new Swiper(".heroSwiper", {
+    loop: true,
+    speed: 1200,
+    parallax: true,
+    autoplay: { delay: 3000 },
+
+    effect: "slide",
+
+    pagination: { 
+        el: ".swiper-pagination",
+        clickable: true 
+    },
+
+    navigation: { 
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+    },
+});
+</script>
+<script>
+ function openMemberModal(cardEl) {
+  const name = cardEl.querySelector('.team-card-name').innerText;
+  const github   = cardEl.dataset.github;
+  const linkedin = cardEl.dataset.linkedin;
+  const instagram= cardEl.dataset.instagram;
+
+  const modal = document.getElementById('memberModal');
+  document.getElementById('modal-name').innerText = name;
+
+  const btnContainer = document.getElementById('modal-buttons');
+  btnContainer.innerHTML = ''; // clear previous buttons
+
+  if (github) {
+    const a = document.createElement('a');
+    a.href = github;
+    a.target = '_blank';
+    a.className = 'modal-btn';
+    a.innerText = 'GitHub';
+    btnContainer.append(a);
+  }
+  if (linkedin) {
+    const a = document.createElement('a');
+    a.href = linkedin;
+    a.target = '_blank';
+    a.className = 'modal-btn';
+    a.innerText = 'LinkedIn';
+    btnContainer.append(a);
+  }
+  if (instagram) {
+    const a = document.createElement('a');
+    a.href = instagram;
+    a.target = '_blank';
+    a.className = 'modal-btn';
+    a.innerText = 'Instagram';
+    btnContainer.append(a);
+  }
+
+  modal.classList.add('open');
+}
+
+function closeMemberModal() {
+  const modal = document.getElementById('memberModal');
+  modal.classList.remove('open');
+}
+
+</script>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const form = this;
+    const alertBox = document.getElementById("contactAlert");
+
+    fetch("{% url 'home:contact_submit' %}", {
+        method: "POST",
+        body: new FormData(form),
+        headers: {
+            "X-CSRFToken": form.querySelector('[name=csrfmiddlewaretoken]').value
+        }
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.status === "success") {
+            alertBox.innerHTML = `<div class="alert alert-success">${data.message}</div>`;
+            form.reset();
+        } else {
+            alertBox.innerHTML = `<div class="alert alert-danger">${data.message}</div>`;
+        }
+    })
+    .catch(() => {
+        alertBox.innerHTML = `<div class="alert alert-danger">Server error. Try again.</div>`;
+    });
+});
+</script>
+
+{% endblock %}
